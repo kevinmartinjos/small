@@ -1,0 +1,6 @@
+exports[`test PostPreview should be rendered 1`] = `
+<div
+  className="PostPreview">
+  boo
+</div>
+`;

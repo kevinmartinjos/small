@@ -3,7 +3,7 @@ import {Row, Col} from 'react-bootstrap';
 import {Link} from 'react-router'
 import '../styles/TopicNav.css';
 
-class TopicNav extends Component {
+var TopicNav = React.createClass({
   render() {
     return( 
     	<div className="TopicNav">
@@ -17,6 +17,6 @@ class TopicNav extends Component {
 	  	</div>
     );
   }
-}
+});
 
 export default TopicNav;

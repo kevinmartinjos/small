@@ -3,7 +3,7 @@ import '../styles/App.css';
 import Header from './Header';
 import TopicNav from './TopicNav';
 
-class App extends Component {
+var App = React.createClass({
   render() {
     return( 
     <div className="App">
@@ -18,6 +18,6 @@ class App extends Component {
     </div>
     );
   }
-}
+});
 
-export default App;
+module.exports = App;

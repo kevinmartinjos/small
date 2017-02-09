@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Row, Col} from 'react-bootstrap';
 
-class Header extends Component {
+var Header = React.createClass({
   render() {
     return(
 		<div>
@@ -17,6 +17,6 @@ class Header extends Component {
 		</div>
     );
   }
-}
+});
 
 export default Header;
