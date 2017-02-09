@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FakeServer from '../fakeServer/FakeServer';
+import FakeServer from '../FakeServer/FakeServer';
 import PostPreview from '../components/PostPreview';
 import PostPreviewContainer from '../components/PostPreviewContainer';
 
@@ -13,7 +13,7 @@ var Main = React.createClass({
 			<div className="Main">
 				<PostPreviewContainer>
 					{this.getHomePage().map(function(post){
-						return <PostPreview preview={post.preview} />
+						return <PostPreview id={post.id} title={post.title} previewText={post.preview} />
 					})}
 				</PostPreviewContainer>
 			</div>

@@ -8,6 +8,9 @@ function FakeServer(){
 				return db.posts[id];
 			});
 		},
+		getPost: function(id){
+			return db.posts[id];
+		}
 	}
 }
 
