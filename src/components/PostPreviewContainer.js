@@ -3,7 +3,7 @@ import React from 'react';
 
 var PostPreviewContainer = React.createClass({
 	render() {
-		return( 
+		return(
 			<div>
 			{this.props.children}
 			</div>

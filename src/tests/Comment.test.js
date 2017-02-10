@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import Comment from '../components/Comment';
-import ReactTestUtils from 'react-addons-test-utils'
+import ReactTestUtils from 'react-addons-test-utils';
 
 test('Comment should be rendered', () => {
 	const component = renderer.create(

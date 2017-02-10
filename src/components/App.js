@@ -5,7 +5,7 @@ import '../styles/App.css';
 
 var App = React.createClass({
   render() {
-    return( 
+    return(
     <div className="App">
       <div className="App__wrap">
         <Header>

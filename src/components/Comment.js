@@ -7,7 +7,7 @@ var Comment = React.createClass({
 		content: PropTypes.string.isRequired
 	},
 	render() {
-		return( 
+		return(
 			<div className="Comment">
 				{this.props.content}
 			</div>

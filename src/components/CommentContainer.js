@@ -12,7 +12,14 @@ var CommentContainer = React.createClass({
 	getInitialState(){
 		return {
 			comments: []
-		}
+		};
+	},
+
+	componentWillMount(){
+		var comments = this.getPostComments(this.props.postId);
+		this.setState({
+			comments: comments
+		});
 	},
 	getPostComments: function(postId){
 		var server = new FakeServer();
@@ -25,18 +32,12 @@ var CommentContainer = React.createClass({
 			comments: comments
 		});
 	},
-	componentDidMount(){
-		var comments = this.getPostComments(this.props.postId);
-		this.setState({
-			comments: comments
-		});
-	},
 	render() {
-		return( 
+		return(
 			<div className="CommentContainer">
 				<CommentInput postId={this.props.postId} submitCallback={this.refreshComments}/>
 				{this.state.comments.map(function(comment){
-					return <Comment key={comment.id} content={comment.content} />
+					return <Comment key={comment.id} content={comment.content} />;
 				})}
 			</div>
 		);

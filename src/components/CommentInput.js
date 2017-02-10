@@ -5,19 +5,19 @@ import FakeServer from '../FakeServer/FakeServer';
 var PropTypes = React.PropTypes;
 
 var CommentInput = React.createClass({
-	propType: {
+	propTypes: {
 		submitCallback: PropTypes.func.isRequired,
 		postId: PropTypes.string.isRequired
 	},
 	getInitialState(){
 		return {
-			value: ""
-		}
+			value: ''
+		};
 	},
 	getDefaultState(){
 		return {
-			value: ""
-		}
+			value: ''
+		};
 	},
 	handleSubmit(event){
 		var server = new FakeServer();
@@ -30,12 +30,13 @@ var CommentInput = React.createClass({
 		this.setState({value: event.target.value});
 	},
 	render() {
-		return( 
+		return(
 			<div className="CommentInput">
 				<form onSubmit={this.handleSubmit}>
 					<textarea value={this.state.value}
-					 onChange={this.handleChange}></textarea>
-					 <Button type='submit' bsStyle='primary'>Submit</Button>
+						onChange={this.handleChange}
+					/>
+					<Button type='submit' bsStyle='primary'>Submit</Button>
 				</form>
 			</div>
 		);

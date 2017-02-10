@@ -5,9 +5,9 @@ var Header = React.createClass({
   render() {
     return(
 		<div>
-    		<Row>
-		    	<Col xs={3}>
-		        	Logo
+			<Row>
+				<Col xs={3}>
+					Logo
 				</Col>
 				<Col xs={3} xsOffset={6}>
 					User login

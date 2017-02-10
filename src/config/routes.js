@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, hashHistory, IndexRoute } from 'react-router'
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import Main from '../components/Main';
 import App from '../components/App';
 import PostContainer from '../components/PostContainer';

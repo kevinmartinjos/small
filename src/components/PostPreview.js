@@ -11,9 +11,9 @@ var PostPreview = React.createClass({
 	},
 
 	render() {
-		return( 
+		return(
 			<div className="PostPreview">
-				<h3><Link to={"/posts/" + this.props.id}>{this.props.title}</Link></h3>
+				<h3><Link to={'/posts/' + this.props.id}>{this.props.title}</Link></h3>
 				<section>{this.props.previewText}</section>
 			</div>
 		);

@@ -6,7 +6,7 @@ import ReactTestUtils from 'react-addons-test-utils'
 
 test('CommentInput should be rendered', () => {
 	const component = renderer.create(
-		<CommentInput />
+		<CommentInput submitCallback={function(){}} postId="1"/>
 	);
 	let tree = component.toJSON();
   	expect(tree).toMatchSnapshot();
@@ -25,7 +25,7 @@ test('Should reload comments on submit', () => {
 	var event = {};
 	event.preventDefault = function(){};
 
-	let component = ReactTestUtils.renderIntoDocument(<CommentInput submitCallback={onSubmit} />);
+	let component = ReactTestUtils.renderIntoDocument(<CommentInput submitCallback={onSubmit} postId="1"/>);
   	component.handleSubmit(event);
   	
   	expect(flag).toEqual(1);

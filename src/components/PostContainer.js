@@ -8,13 +8,9 @@ var PostContainer = React.createClass({
 		return {
 			title: null,
 			content: null
-		}
+		};
 	},
-	getPost(id){
-		var server = new FakeServer();
-		return server.getPost(id);
-	},
-	componentDidMount(){
+	componentWillMount(){
 		var id = this.props.routeParams.id;
 		var post = this.getPost(id);
 		this.setState({
@@ -22,8 +18,12 @@ var PostContainer = React.createClass({
 			content: post.content
 		});
 	},
+	getPost(id){
+		var server = new FakeServer();
+		return server.getPost(id);
+	},
 	render() {
-		return( 
+		return(
 			<div className='PostContainer'>
 				<Post title={this.state.title} content={this.state.content} />
 				<CommentContainer postId={this.props.routeParams.id.toString()} />

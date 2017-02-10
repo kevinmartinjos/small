@@ -7,13 +7,13 @@ var Main = React.createClass({
 	getHomePage(){
 		var server = new FakeServer();
 		return server.getHomePageContent();
-	},	
+	},
 	render() {
-		return( 
+		return(
 			<div className="Main">
 				<PostPreviewContainer>
 					{this.getHomePage().map(function(post){
-						return <PostPreview key={post.id} id={post.id} title={post.title} previewText={post.preview} />
+						return <PostPreview key={post.id} id={post.id} title={post.title} previewText={post.preview} />;
 					})}
 				</PostPreviewContainer>
 			</div>
