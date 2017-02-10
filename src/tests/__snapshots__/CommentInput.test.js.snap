@@ -1,0 +1,6 @@
+exports[`test CommentInput should be rendered 1`] = `
+<div
+  className="CommentInput">
+  <textarea />
+</div>
+`;

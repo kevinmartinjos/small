@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import {Link} from 'react-router'
-
+import '../styles/TopicNav.css';
 
 var TopicNav = React.createClass({
   render() {

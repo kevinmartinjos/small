@@ -10,6 +10,9 @@ function FakeServer(){
 		},
 		getPost: function(id){
 			return db.posts[id];
+		},
+		getPostComments: function(id){
+			return [];
 		}
 	}
 }

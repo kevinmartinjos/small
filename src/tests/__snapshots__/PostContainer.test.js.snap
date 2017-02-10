@@ -1,0 +1,23 @@
+exports[`test PostContainer should be rendered 1`] = `
+<div
+  className="PostContainer">
+  <div
+    className="Post">
+    <h3>
+      Test post
+    </h3>
+    <section>
+      Hi I\'m a test line
+      						<span>And I am a span </span>
+      						<a href=\"#\'> I am a Link!</a>
+    </section>
+  </div>
+  <div
+    className="CommentContainer">
+    <div
+      className="CommentInput">
+      <textarea />
+    </div>
+  </div>
+</div>
+`;

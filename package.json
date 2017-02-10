@@ -24,12 +24,12 @@
     "react-dom": "^15.4.2",
     "react-router": "^3.0.2",
     "react-test-renderer": "^15.4.2"
-  }
-,  "scripts": {
+  },
+  "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "boo": "react-scripts test --env=jsdom",
-    "test": "jest",
+    "test": "react-scripts test --env=jsdom",
     "snap": "jest -u",
     "eject": "react-scripts eject"
   },
@@ -46,7 +46,7 @@
   },
   "jest": {
     "moduleNameMapper": {
-      ".css$": "./src/tests/css_stub.js"
-}
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   }
 }

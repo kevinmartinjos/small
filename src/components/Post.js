@@ -1,7 +1,4 @@
-import React, { Component } from 'react';
-import {Link} from 'react-router';
-
-var PropTypes = React.PropTypes;
+import React from 'react';
 
 var Post = React.createClass({
 	render() {

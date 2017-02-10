@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
-import {Link} from 'react-router';
+import React from 'react';
 import FakeServer from '../FakeServer/FakeServer';
 import Post from './Post';
-
-var PropTypes = React.PropTypes;
+import CommentContainer from './CommentContainer';
 
 var PostContainer = React.createClass({
 	getInitialState(){
@@ -17,9 +15,8 @@ var PostContainer = React.createClass({
 		return server.getPost(id);
 	},
 	componentDidMount(){
-		var post = this.getPost(this.props.params.id);
-		console.log('boo');
-		console.log(post);
+		var id = this.props.routeParams.id;
+		var post = this.getPost(id);
 		this.setState({
 			title: post.title,
 			content: post.content
@@ -27,7 +24,10 @@ var PostContainer = React.createClass({
 	},
 	render() {
 		return( 
-			<Post title={this.state.title} content={this.state.content} />
+			<div className='PostContainer'>
+				<Post title={this.state.title} content={this.state.content} />
+				<CommentContainer postid={this.props.routeParams.id} />
+			</div>
 		);
 	}
 });

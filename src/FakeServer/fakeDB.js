@@ -5,7 +5,9 @@ var db = {
 			id: 1,
 			title: "Test post",
 			preview: "I am just a test post",
-			content: "I am just a test post. Don't judge me"
+			content: `Hi I'm a test line
+						<span>And I am a span </span>
+						<a href="#'> I am a Link!</a>`
 		},
 		2: {
 			id: 2,

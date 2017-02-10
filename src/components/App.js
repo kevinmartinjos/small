@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from './Header';
 import TopicNav from './TopicNav';
+import '../styles/App.css';
 
 var App = React.createClass({
   render() {

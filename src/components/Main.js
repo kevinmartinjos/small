@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FakeServer from '../FakeServer/FakeServer';
 import PostPreview from '../components/PostPreview';
 import PostPreviewContainer from '../components/PostPreviewContainer';
