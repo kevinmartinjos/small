@@ -7,27 +7,26 @@ var PropTypes = React.PropTypes;
 
 var CommentContainer = React.createClass({
 	propTypes: {
-		postid: PropTypes.string.isRequired
+		postId: PropTypes.string.isRequired
 	},
 	getInitialState(){
 		return {
 			comments: []
 		}
 	},
-	getPostComments: function(postid){
+	getPostComments: function(postId){
 		var server = new FakeServer();
-		return server.getPostComments(postid);
+		return server.getPostComments(postId);
 	},
 	refreshComments: function(){
 		var server = new FakeServer();
-		console.log('refreshed');
-		var comments = server.getPostComments(this.props.postid);
+		var comments = server.getPostComments(this.props.postId);
 		this.setState({
 			comments: comments
 		});
 	},
 	componentDidMount(){
-		var comments = this.getPostComments(this.props.postid);
+		var comments = this.getPostComments(this.props.postId);
 		this.setState({
 			comments: comments
 		});
@@ -35,9 +34,9 @@ var CommentContainer = React.createClass({
 	render() {
 		return( 
 			<div className="CommentContainer">
-				<CommentInput submitCallback={this.refreshComments}/>
+				<CommentInput postId={this.props.postId} submitCallback={this.refreshComments}/>
 				{this.state.comments.map(function(comment){
-					return <Comment content={comment.content} />
+					return <Comment key={comment.id} content={comment.content} />
 				})}
 			</div>
 		);

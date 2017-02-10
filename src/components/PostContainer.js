@@ -26,7 +26,7 @@ var PostContainer = React.createClass({
 		return( 
 			<div className='PostContainer'>
 				<Post title={this.state.title} content={this.state.content} />
-				<CommentContainer postid={this.props.routeParams.id} />
+				<CommentContainer postId={this.props.routeParams.id.toString()} />
 			</div>
 		);
 	}

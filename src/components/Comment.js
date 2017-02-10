@@ -9,7 +9,7 @@ var Comment = React.createClass({
 	render() {
 		return( 
 			<div className="Comment">
-				I am a comment
+				{this.props.content}
 			</div>
 		);
 	}
