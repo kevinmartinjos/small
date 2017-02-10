@@ -3,7 +3,8 @@ import db from './fakeDB'
 
 function FakeServer(){
 	function initLocalStorage(storage){
-		var commentStore = JSON.parse(storage.getItem('commentStore'));
+		var commentStore = storage.getItem('commentStore');
+		commentStore = commentStore == undefined ? undefined : JSON.parse(commentStore);
 		if(commentStore === undefined || commentStore === null){
 			var obj = {
 				allCommentsEverCount: 0
@@ -15,6 +16,24 @@ function FakeServer(){
 	};
 
 	function getLocalStorage(){
+		if(window.localStorage === undefined){
+			var localStorageMock = (function() {
+				var store = {};
+				return {
+					getItem: function(key) {
+						return store[key];
+					},
+					setItem: function(key, value) {
+						store[key] = value.toString();
+					},
+					clear: function() {
+						store = {};
+					}
+				};
+			})();
+			Object.defineProperty(window, 'localStorage', { value: localStorageMock });
+		}
+
 		var storage = window.localStorage;
 		initLocalStorage(storage);
 		return storage;	
@@ -48,7 +67,6 @@ function FakeServer(){
 				id: primaryKey,
 				content: content
 			});
-			console.log(commentStore);
 			storage.setItem('commentStore', JSON.stringify(commentStore));
 		}
 	}
