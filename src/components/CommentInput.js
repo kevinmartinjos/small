@@ -33,10 +33,12 @@ var CommentInput = React.createClass({
 		return(
 			<div className="CommentInput">
 				<form onSubmit={this.handleSubmit}>
+					<div>
 					<textarea value={this.state.value}
 						onChange={this.handleChange}
 					/>
-					<Button type='submit' bsStyle='primary'>Submit</Button>
+					</div>
+					<Button bsSize='sm' type='submit' bsStyle='primary'>Submit</Button>
 				</form>
 			</div>
 		);

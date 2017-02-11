@@ -1,16 +1,14 @@
 import React from 'react';
 import {Row, Col} from 'react-bootstrap';
+import '../styles/Header.css';
 
 var Header = React.createClass({
   render() {
     return(
-		<div>
+		<div className='Header'>
 			<Row>
-				<Col xs={3}>
-					Logo
-				</Col>
-				<Col xs={3} xsOffset={6}>
-					User login
+				<Col xs={2}>
+					<img className='logo' src={'/small_logo_tiny.png'} alt='logo'/>
 				</Col>
 			</Row>
 		{this.props.children}

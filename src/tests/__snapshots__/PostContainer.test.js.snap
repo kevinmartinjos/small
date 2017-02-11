@@ -1,47 +1,55 @@
 exports[`test PostContainer should be rendered 1`] = `
 <div
-  className="PostContainer">
+  className="row">
   <div
-    className="Post">
-    <h3>
-      Test post
-    </h3>
+    className="col-xs-12">
     <div
-      onMouseUp={[Function]}>
+      className="PostContainer">
       <div
-        className="PostContentContainer">
-        <section>
-          <p>
-            Hi I\'m a test line
-          </p>
-          <p>
-            <span>
-              And I am a span 
-            </span>
-            <b>
-              and I am written in bold
-            </b>
-          </p>
-        </section>
+        className="Post">
+        <h3>
+          Test post
+        </h3>
+        <div
+          onMouseUp={[Function]}>
+          <div
+            className="PostContentContainer">
+            <section>
+              <p>
+                Hi I\'m a test line
+              </p>
+              <p>
+                <span>
+                  And I am a span 
+                </span>
+                <b>
+                  and I am written in bold
+                </b>
+              </p>
+            </section>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div
-    className="CommentContainer">
-    <div
-      className="CommentInput">
-      <form
-        onSubmit={[Function]}>
-        <textarea
-          onChange={[Function]}
-          value="" />
-        <button
-          className="btn btn-primary"
-          disabled={false}
-          type="submit">
-          Submit
-        </button>
-      </form>
+      <div
+        className="CommentContainer">
+        <div
+          className="CommentInput">
+          <form
+            onSubmit={[Function]}>
+            <div>
+              <textarea
+                onChange={[Function]}
+                value="" />
+            </div>
+            <button
+              className="btn btn-sm btn-primary"
+              disabled={false}
+              type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>

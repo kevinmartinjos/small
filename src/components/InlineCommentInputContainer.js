@@ -44,7 +44,9 @@ var InlineCommentInputContainer = React.createClass({
 					{this.context.selectedText}
 				</div>
 				<form onSubmit={this.submitHandler}>
-					<textarea onChange={this.handleChange}/>
+					<div>
+						<textarea onChange={this.handleChange}/>
+					</div>
 					<Button bsSize='sm' type='submit'>Submit</Button>
 					<Button bsSize='sm' onClick={this.handleCancel}>cancel</Button>
 				</form>

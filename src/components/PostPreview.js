@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import '../styles/PostPreview.css';
 
 var PropTypes = React.PropTypes;
 
@@ -13,7 +14,7 @@ var PostPreview = React.createClass({
 	render() {
 		return(
 			<div className="PostPreview">
-				<h3><Link to={'/posts/' + this.props.id}>{this.props.title}</Link></h3>
+				<h3><Link className='title' to={'/posts/' + this.props.id}>{this.props.title}</Link></h3>
 				<section>{this.props.previewText}</section>
 			</div>
 		);

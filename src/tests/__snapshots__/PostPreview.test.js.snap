@@ -3,6 +3,7 @@ exports[`test PostPreview should be rendered 1`] = `
   className="PostPreview">
   <h3>
     <a
+      className="title"
       onClick={[Function]}
       style={Object {}}>
       foo

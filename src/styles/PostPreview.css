@@ -1,0 +1,13 @@
+.PostPreview{
+	text-align: left;
+	padding-left: 20px;
+}
+
+.PostPreview .title{
+	color: rgba(0, 0, 0, 0.8);
+	cursor: pointer;
+}
+
+.PostPreview .title:hover{
+	text-decoration: none;
+}

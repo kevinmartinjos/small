@@ -5,11 +5,13 @@ exports[`test CommentContainer should be rendered 1`] = `
     className="CommentInput">
     <form
       onSubmit={[Function]}>
-      <textarea
-        onChange={[Function]}
-        value="" />
+      <div>
+        <textarea
+          onChange={[Function]}
+          value="" />
+      </div>
       <button
-        className="btn btn-primary"
+        className="btn btn-sm btn-primary"
         disabled={false}
         type="submit">
         Submit

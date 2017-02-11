@@ -3,6 +3,8 @@ import FakeServer from '../FakeServer/FakeServer';
 import Post from './Post';
 import CommentContainer from './CommentContainer';
 import InlineCommentPrompt from './InlineCommentPrompt';
+import '../styles/PostContainer.css';
+import {Row, Col} from 'react-bootstrap';
 
 var PropTypes = React.PropTypes;
 
@@ -96,19 +98,25 @@ var PostContainer = React.createClass({
 	},
 	render() {
 		return(
-			<div className='PostContainer'>
-				<Post title={this.state.title} content={this.state.content} handleSelection={this.getSelection}	/>
-				{this.state.showInlineComment &&
-					<InlineCommentPrompt x={this.state.inlineCommentProps.x}
-						y={this.state.inlineCommentProps.y}
-						submitHandlerCallback={this.inlineCommentSubmitHandler}
-						cancelCallback={this.inlineCommentCancel}
-						ref={this.storeInlineCommentPrompt}
-					/>
-				}
+			<Row>
+				<Col xs={12}>
+					<div className='PostContainer'>
+						<Post title={this.state.title} content={this.state.content}
+							handleSelection={this.getSelection}
+						/>
+						{this.state.showInlineComment &&
+							<InlineCommentPrompt x={this.state.inlineCommentProps.x}
+								y={this.state.inlineCommentProps.y}
+								submitHandlerCallback={this.inlineCommentSubmitHandler}
+								cancelCallback={this.inlineCommentCancel}
+								ref={this.storeInlineCommentPrompt}
+							/>
+						}
 
-				<CommentContainer ref={this.storeCommentComponent} postId={this.props.routeParams.id.toString()} />
-			</div>
+						<CommentContainer ref={this.storeCommentComponent} postId={this.props.routeParams.id.toString()} />
+					</div>
+				</Col>
+			</Row>
 		);
 	}
 });

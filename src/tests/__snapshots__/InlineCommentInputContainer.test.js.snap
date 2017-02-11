@@ -4,8 +4,10 @@ exports[`test InlineCommentInputContainer should be rendered 1`] = `
   <div />
   <form
     onSubmit={[Function]}>
-    <textarea
-      onChange={[Function]} />
+    <div>
+      <textarea
+        onChange={[Function]} />
+    </div>
     <button
       className="btn btn-sm btn-default"
       disabled={false}
