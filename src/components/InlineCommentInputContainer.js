@@ -10,7 +10,8 @@ var InlineCommentInputContainer = React.createClass({
 		cancelCallback: PropTypes.func.isRequired
 	},
 	contextTypes: {
-		postId: PropTypes.string
+		postId: PropTypes.string,
+		selectedText: PropTypes.string
 	},
 	getInitialState(){
 		return {
@@ -24,12 +25,13 @@ var InlineCommentInputContainer = React.createClass({
 	},
 	submitHandler(event){
 		var server = new FakeServer();
-		server.addPostComment(this.context.postId, this.state.value);
+		server.addPostComment(this.context.postId, this.state.value, this.context.selectedText);
 		this.props.submitHandlerCallback();
 		this.setState(this.getDefaultState());
 		event.preventDefault();
 	},
 	handleChange(event){
+		console.log(this.context.selectedText);
 		this.setState({value: event.target.value});
 	},
 	handleCancel(){
@@ -38,6 +40,9 @@ var InlineCommentInputContainer = React.createClass({
 	render() {
 		return(
 			<div className="InlineCommentInputContainer">
+				<div>
+					{this.context.selectedText}
+				</div>
 				<form onSubmit={this.submitHandler}>
 					<textarea onChange={this.handleChange}/>
 					<Button bsSize='sm' type='submit'>Submit</Button>

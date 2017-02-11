@@ -20,11 +20,13 @@ var PostContainer = React.createClass({
 	},
 	getChildContext() {
 		return {
-			postId: this.props.routeParams.id
+			postId: this.props.routeParams.id,
+			selectedText: this.state.selectedText
 		};
 	},
 	childContextTypes: {
-		postId: PropTypes.string
+		postId: PropTypes.string,
+		selectedText: PropTypes.string
 	},
 	componentWillMount(){
 		var id = this.props.routeParams.id;

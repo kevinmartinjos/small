@@ -57,7 +57,7 @@ function FakeServer(){
 			}
 			return comments;
 		},
-		addPostComment: function(id, content){
+		addPostComment: function(id, content, annotation){
 			var storage = getLocalStorage();
 			var commentStore = JSON.parse(storage.getItem('commentStore'));
 			var primaryKey = commentStore.allCommentsEverCount++;
@@ -66,7 +66,8 @@ function FakeServer(){
 			}
 			commentStore[id].push({
 				id: primaryKey,
-				content: content
+				content: content,
+				annotation: annotation
 			});
 			storage.setItem('commentStore', JSON.stringify(commentStore));
 		}

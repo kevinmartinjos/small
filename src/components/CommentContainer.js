@@ -37,7 +37,7 @@ var CommentContainer = React.createClass({
 			<div className="CommentContainer">
 				<CommentInput postId={this.props.postId} submitCallback={this.refreshComments}/>
 				{this.state.comments.map(function(comment){
-					return <Comment key={comment.id} content={comment.content} />;
+					return <Comment key={comment.id} content={comment.content} annotation={comment.annotation}/>;
 				})}
 			</div>
 		);

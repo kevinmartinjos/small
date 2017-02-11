@@ -1,6 +1,7 @@
 exports[`test InlineCommentInputContainer should be rendered 1`] = `
 <div
   className="InlineCommentInputContainer">
+  <div />
   <form
     onSubmit={[Function]}>
     <textarea
