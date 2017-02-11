@@ -1,0 +1,8 @@
+exports[`test PostContentContainer should be rendered 1`] = `
+<div
+  className="PostContentContainer">
+  <section>
+    I am a post
+  </section>
+</div>
+`;

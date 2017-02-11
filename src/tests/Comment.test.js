@@ -11,3 +11,9 @@ test('Comment should be rendered', () => {
 	let tree = component.toJSON();
   	expect(tree).toMatchSnapshot();
 });
+
+test('Comment should render html', () => {
+	let component = ReactTestUtils.renderIntoDocument(<Comment content="I am a <span>span</span>" />);
+	let node = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'Comment');
+	expect(node.textContent).toBe('I am a span');
+});

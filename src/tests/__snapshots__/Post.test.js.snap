@@ -1,0 +1,17 @@
+exports[`test Post should be rendered 1`] = `
+<div
+  className="Post">
+  <h3>
+    Test
+  </h3>
+  <div
+    onMouseUp={undefined}>
+    <div
+      className="PostContentContainer">
+      <section>
+        I am post
+      </section>
+    </div>
+  </div>
+</div>
+`;

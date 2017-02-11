@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactHtmlParser from 'react-html-parser';
 
 var PropTypes = React.PropTypes;
 
@@ -9,7 +10,7 @@ var Comment = React.createClass({
 	render() {
 		return(
 			<div className="Comment">
-				{this.props.content}
+				{ReactHtmlParser(this.props.content)}
 			</div>
 		);
 	}

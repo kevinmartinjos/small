@@ -5,9 +5,9 @@ var db = {
 			id: 1,
 			title: 'Test post',
 			preview: 'I am just a test post',
-			content: `Hi I'm a test line
-						<span>And I am a span </span>
-						<a href="#'> I am a Link!</a>`
+			content: `<p>Hi I'm a test line</p>
+					<p><span>And I am a span </span>
+					<b>and I am written in bold</p></b>`						
 		},
 		2: {
 			id: 2,

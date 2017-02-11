@@ -6,11 +6,25 @@ exports[`test PostContainer should be rendered 1`] = `
     <h3>
       Test post
     </h3>
-    <section>
-      Hi I\'m a test line
-      						<span>And I am a span </span>
-      						<a href=\"#\'> I am a Link!</a>
-    </section>
+    <div
+      onMouseUp={[Function]}>
+      <div
+        className="PostContentContainer">
+        <section>
+          <p>
+            Hi I\'m a test line
+          </p>
+          <p>
+            <span>
+              And I am a span 
+            </span>
+            <b>
+              and I am written in bold
+            </b>
+          </p>
+        </section>
+      </div>
+    </div>
   </div>
   <div
     className="CommentContainer">
