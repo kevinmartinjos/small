@@ -45,7 +45,7 @@ test('Should mark user selected test in html', () => {
 	expect(1).toEqual(2);
 });
 
-test('should show inline commentbox on selection', () => {
+test('should show inline commentbox prompt on selection', () => {
 	var mockParam = {id: 1};
 	
 	var event = {
@@ -55,5 +55,5 @@ test('should show inline commentbox on selection', () => {
 
 	let component = ReactTestUtils.renderIntoDocument(<PostContainer routeParams={mockParam}/>);
 	component.getSelection(event);
-	let node = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'InlineComment');
+	let node = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'InlineCommentPrompt');
 });
