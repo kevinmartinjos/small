@@ -1,13 +1,19 @@
 exports[`test InlineComment should be rendered 1`] = `
 <div
-  className="InlineComment"
+  className="InlineCommentPrompt"
   style={
     Object {
-      "left": undefined,
+      "left": 1,
       "position": "absolute",
-      "top": undefined,
+      "top": 1,
     }
   }>
-  hello
+  <button
+    className="btn btn-sm btn-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button">
+    c
+  </button>
 </div>
 `;

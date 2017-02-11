@@ -77,6 +77,7 @@ var PostContainer = React.createClass({
 			showInlineComment: false
 		});
 	},
+	
 	/*If the inline comment input box is canceled, we should not even
 	show the inlineCommentPrompt anymore - i.e the small hovering prompt
 	button too should disappear*/
@@ -88,6 +89,9 @@ var PostContainer = React.createClass({
 	storeCommentComponent(ref){
 		this.commentContainer = ref;
 	},
+	storeInlineCommentPrompt(ref){
+		this.inlineCommentPrompt = ref;
+	},
 	render() {
 		return(
 			<div className='PostContainer'>
@@ -97,6 +101,7 @@ var PostContainer = React.createClass({
 						y={this.state.inlineCommentProps.y}
 						submitHandlerCallback={this.inlineCommentSubmitHandler}
 						cancelCallback={this.inlineCommentCancel}
+						ref={this.storeInlineCommentPrompt}
 					/>
 				}
 

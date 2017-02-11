@@ -36,15 +36,19 @@ var InlineCommentPrompt = React.createClass({
 			prompt: false
 		});
 	},
+	storeCommentInputContainer(ref){
+		this.commentInputContainer = ref;
+	},
 	render() {
 		return(
-			<div className="InlineComment" ref="child" style={this.state.style}>
+			<div className="InlineCommentPrompt" ref="child" style={this.state.style}>
 				{this.state.prompt ?
 					(<Button bsSize='sm' onClick={this.handlePromptClick}>c</Button>)
 					:
 					(<InlineCommentInputContainer 
 						submitHandlerCallback={this.props.submitHandlerCallback}
 						cancelCallback={this.props.cancelCallback}
+						refs={this.storeCommentInputContainer}
 					/>)
 				}
 			</div>

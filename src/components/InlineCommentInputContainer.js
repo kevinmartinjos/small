@@ -32,13 +32,16 @@ var InlineCommentInputContainer = React.createClass({
 	handleChange(event){
 		this.setState({value: event.target.value});
 	},
+	handleCancel(){
+		this.props.cancelCallback();
+	},
 	render() {
 		return(
 			<div className="InlineCommentInputContainer">
 				<form onSubmit={this.submitHandler}>
 					<textarea onChange={this.handleChange}/>
 					<Button bsSize='sm' type='submit'>Submit</Button>
-					<Button bsSize='sm' onClick={this.props.cancelCallback}>cancel</Button>
+					<Button bsSize='sm' onClick={this.handleCancel}>cancel</Button>
 				</form>
 			</div>
 		);
