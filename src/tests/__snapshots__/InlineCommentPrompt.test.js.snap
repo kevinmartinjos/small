@@ -1,4 +1,4 @@
-exports[`test InlineComment should be rendered 1`] = `
+exports[`test InlineCommentPrompt should be rendered 1`] = `
 <div
   className="InlineCommentPrompt"
   style={

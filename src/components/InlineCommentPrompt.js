@@ -48,7 +48,7 @@ var InlineCommentPrompt = React.createClass({
 					(<InlineCommentInputContainer 
 						submitHandlerCallback={this.props.submitHandlerCallback}
 						cancelCallback={this.props.cancelCallback}
-						refs={this.storeCommentInputContainer}
+						ref={this.storeCommentInputContainer}
 					/>)
 				}
 			</div>

@@ -16,11 +16,9 @@ test('CommentContainer should be rendered', () => {
 test('CommentContainer should have input box', () => {
 	let component = ReactTestUtils.renderIntoDocument(<CommentContainer postId="0"/>);
   	let node = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'CommentInput');
-	expect(node).not.toBe(undefined);
 });
 
 test('CommentContainer should display comments for a post', () => {
 	let component = ReactTestUtils.renderIntoDocument(<CommentContainer postId="0"/>);
   	let node = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'CommentInput');
-	expect(node).not.toBe(undefined);
 });

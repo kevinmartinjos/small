@@ -19,12 +19,12 @@ test('InlineCommentPrompt should be rendered', () => {
 });
 
 test('Display InlineCommentInputContainer when pressed', () => {
-
+	function submitHandlerCallback(){};
+	function cancelCallback(){};
 	let component = ReactTestUtils.renderIntoDocument(<InlineCommentPrompt x={1} y={1} 
 														submitHandlerCallback={submitHandlerCallback}
 														cancelCallback={cancelCallback}
 													/>);
 	component.handlePromptClick();
 	let node = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'InlineCommentInputContainer');
-	expect(node).not.toBe(undefined);
 });

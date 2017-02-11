@@ -42,7 +42,6 @@ test('Comments should be rendered', () => {
 	var mockParam = {id: '1'};
 	let component = ReactTestUtils.renderIntoDocument(<PostContainer routeParams={mockParam}/>);
   	let node = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'CommentContainer');
-	expect(node).not.toBe(undefined);
 });
 
 test('Should return user selected text', () => {
@@ -79,6 +78,9 @@ test('should hide commentbox prompt on cancel', () => {
 	};
 
 	let component = ReactTestUtils.renderIntoDocument(<PostContainer routeParams={mockParam}/>);
+	component.getSelection(event);
+	component.inlineCommentPrompt.handlePromptClick();
 	component.inlineCommentPrompt.commentInputContainer.handleCancel();
-	expect(component.inlineCommentPrompt).not.isDOMComponent();
+	expect(ReactTestUtils.scryRenderedDOMComponentsWithClass(component, 'InlineCommentPrompt').length).toBe(0);
+	expect(ReactTestUtils.scryRenderedDOMComponentsWithClass(component, 'InlineCommentInputContainer').length).toBe(0);
 });
