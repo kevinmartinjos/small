@@ -1,9 +1,9 @@
 exports[`test Post should be rendered 1`] = `
 <div
   className="Post">
-  <h3>
+  <h2>
     Test
-  </h3>
+  </h2>
   <div
     onMouseUp={undefined}>
     <div

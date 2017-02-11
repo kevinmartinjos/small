@@ -12,7 +12,7 @@ var Post = React.createClass({
 	render() {
 		return(
 			<div className="Post">
-				<h3>{this.props.title}</h3>
+				<h2>{this.props.title}</h2>
 				<div onMouseUp={this.props.handleSelection}>
 					<PostContentContainer content={this.props.content} />
 				</div>
