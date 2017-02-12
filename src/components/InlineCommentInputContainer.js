@@ -8,7 +8,8 @@ var PropTypes = React.PropTypes;
 var InlineCommentInputContainer = React.createClass({
 	propTypes: {
 		submitHandlerCallback: PropTypes.func.isRequired,
-		cancelCallback: PropTypes.func.isRequired
+		cancelCallback: PropTypes.func.isRequired,
+		domId: PropTypes.string
 	},
 	contextTypes: {
 		postId: PropTypes.string,
@@ -26,13 +27,12 @@ var InlineCommentInputContainer = React.createClass({
 	},
 	submitHandler(event){
 		var server = new FakeServer();
-		server.addPostComment(this.context.postId, this.state.value, this.context.selectedText);
+		server.addPostComment(this.context.postId, this.state.value, this.context.selectedText, this.props.domId);
 		this.props.submitHandlerCallback();
 		this.setState(this.getDefaultState());
 		event.preventDefault();
 	},
 	handleChange(event){
-		console.log(this.context.selectedText);
 		this.setState({value: event.target.value});
 	},
 	handleCancel(){

@@ -48,19 +48,16 @@ var PostContainer = React.createClass({
 	},
 
 	/*	getSelection needs to be passed all the way down to Post.js
-		why?
-		Trying to play cool and seperate 'handlers' from the 'presentational' components
-	*/
+		why?	*/
 	getSelection(){
 		var selection = window.getSelection();
 		var selectedText = selection.toString();
 		if(selectedText.length !== 0) {
 			//TODO: Be mroe defensive here. What if there is more than 1 range?
 			//getClientRects is the de facto way to get position of a DOM node
-			var rect = selection.getRangeAt(0).getClientRects()[0];
+			var range = selection.getRangeAt(0); 
+			var rect = range.getClientRects()[0];
 			var containerRect = this.postContainer.getClientRects()[0];
-			// console.log(selection.getRangeAt(0));
-
 			this.setState({
 				selectedText: selectedText,
 				//show the small hovering comment button
@@ -68,6 +65,7 @@ var PostContainer = React.createClass({
 				inlineCommentProps: {
 					x: rect.right - containerRect.left + 25, //+25 is for making sure the floating button does not cover text to be commented
 					y: rect.top - containerRect.top,
+					domId: range.startContainer.parentElement.id //so that an inline comment can refer to its annotation in the DOM
 				}
 			});
 		}
@@ -103,6 +101,12 @@ var PostContainer = React.createClass({
 	storeInlineCommentPrompt(ref){
 		this.inlineCommentPrompt = ref;
 	},
+	/*
+		When displaying the inline comment prompt, it is positioned absolutely.
+		Hence we need the position of the post's container element
+		so that the comment prompt can be placed at the end of the user's
+		selection box correctly. Refer to this.getSelection()
+	*/
 	storePostContainer(ref){
 		this.postContainer = ref;
 	},
@@ -122,6 +126,7 @@ var PostContainer = React.createClass({
 						{this.state.showInlineComment &&
 							<InlineCommentPrompt x={this.state.inlineCommentProps.x}
 								y={this.state.inlineCommentProps.y}
+								domId={this.state.inlineCommentProps.domId}
 								submitHandlerCallback={this.inlineCommentSubmitHandler}
 								cancelCallback={this.inlineCommentCancel}
 								ref={this.storeInlineCommentPrompt}

@@ -9,6 +9,7 @@ var InlineCommentPrompt = React.createClass({
 	propTypes: {
 		x: PropTypes.number.isRequired,
 		y: PropTypes.number.isRequired,
+		domId: PropTypes.string,
 		submitHandlerCallback: PropTypes.func.isRequired,
 		cancelCallback: PropTypes.func.isRequired
 	},
@@ -48,7 +49,8 @@ var InlineCommentPrompt = React.createClass({
 						<Glyphicon glyph="pencil" onClick={this.handlePromptClick}/>
 					</Button>)
 					:
-					(<InlineCommentInputContainer 
+					(<InlineCommentInputContainer
+						domId={this.props.domId}
 						submitHandlerCallback={this.props.submitHandlerCallback}
 						cancelCallback={this.props.cancelCallback}
 						ref={this.storeCommentInputContainer}

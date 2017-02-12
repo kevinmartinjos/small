@@ -8,8 +8,20 @@
 	font-family: 'medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif';
 }
 
+.Comment .annotation{
+	cursor: pointer;
+}
+
 .Comment .annotation span{
 	background-color: rgba(233, 253, 240, 1) !important;
+}
+
+.Comment a{
+	text-decoration: none;
+}
+
+.Comment a:hover{
+	text-decoration: none;
 }
 
 .Comment .content{

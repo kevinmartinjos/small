@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import FakeServer from '../FakeServer/FakeServer';
 import CommentInput from './CommentInput';
 import Comment from './Comment';
@@ -32,12 +33,25 @@ var CommentContainer = React.createClass({
 			comments: comments
 		});
 	},
+	handleAnnotationClick(id){
+		var domElement = document.getElementById(id);
+		var rect = domElement.getClientRects()[0];
+		window.scroll(rect.left, rect.top);
+		domElement.className += " blink";
+		domElement.addEventListener('animationend', function(){
+			this.classList.remove("blink");
+		});
+	},
 	render() {
+		var self = this;
 		return(
 			<div className="CommentContainer">
 				<CommentInput postId={this.props.postId} submitCallback={this.refreshComments}/>
 				{this.state.comments.map(function(comment){
-					return <Comment key={comment.id} content={comment.content} annotation={comment.annotation}/>;
+					return <Comment key={comment.id} content={comment.content}
+							annotation={comment.annotation}
+							domId={comment.domId}
+							handleAnnotationClick={self.handleAnnotationClick}/>;
 				})}
 			</div>
 		);
