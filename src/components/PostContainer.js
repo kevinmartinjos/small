@@ -105,6 +105,22 @@ var PostContainer = React.createClass({
 	storePostRecommendations(ref){
 		this.postRecommendations = ref;
 	},
+
+	/*
+		Ok this is a mess. React was supposed to do this FOR me.
+		Why?
+		There was a bug. 'Recommendations' that are displayed below a post have <Link> in them. 
+
+		Expectation - user clicks on them, route changes, props to <PostContainer> changes, <PostContainer> re-renders.
+		Reality - route changed, the props to <PostContainer /> changed, but it did not re-render!
+
+		You might argue that rendering occurs only on setState(). There's a problem here. My state changes when I call
+		getPost() in getInitialState() with the post id that is passed in as a prompt. But getInitialState() gets called
+		only once in a lifecycle. ComponentDidMount/ComponentWillMount won't get called here either. So how do I change state
+		if my (fake) server call does not even get triggered?
+
+		Hence I'm diffing the props myself and setting the state to force a re-render
+	*/
 	componentWillUpdate(nextProps, nextState){
 		if(this.props.params.id !== nextProps.params.id){
 			var post = this.getPost(nextProps.params.id);
@@ -114,7 +130,6 @@ var PostContainer = React.createClass({
 				content: post.content,
 				recommendations: post.recommendations
 			});
-			// this.postRecommendations.forceUpdate();
 		}
 	},
 	render() {

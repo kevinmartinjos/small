@@ -38,6 +38,7 @@ var CommentInput = React.createClass({
 						componentClass="textarea"
 						onChange={this.handleChange}
 						placeholder="Let us know what you think"
+						value={this.state.value}
 					/>
 					<Button bsSize='sm' type='submit' bsStyle='primary'>Submit</Button>
 				</form>

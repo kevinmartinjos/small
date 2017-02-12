@@ -1,3 +1,7 @@
+.InlineCommentPrompt{
+	z-index: 1000;
+}
+
 .InlineCommentPrompt .makeComment{
 	font-size: 32px;
 	padding-left: 8px;

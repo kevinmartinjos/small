@@ -31,7 +31,8 @@ exports[`test PostContainer should be rendered 1`] = `
                 id="1486891472468">
                 For many developers outside the company, this is surprising and counterintuitive, but it works really well. (The article linked above gives good examples, so I won’t repeat them here.)
               </p>
-              <h3>
+              <h3
+                id="1486909266368">
                 Only one version
               </h3>
               <p
@@ -55,11 +56,15 @@ exports[`test PostContainer should be rendered 1`] = `
         </div>
       </div>
       <div
-        className="row">
+        className="PostRecommendations row">
         <div
           className="col-xs-12">
+          <h2
+            className="recommendations-title">
+            More
+          </h2>
           <div
-            className="col-md-4 col-sm-12 col-xs-12">
+            className="no-padding col-md-4 col-sm-12 col-xs-12">
             <div
               className="PostPreview panel panel-default"
               id={undefined}>
@@ -80,7 +85,7 @@ exports[`test PostContainer should be rendered 1`] = `
             </div>
           </div>
           <div
-            className="col-md-4 col-sm-12 col-xs-12">
+            className="no-padding col-md-4 col-sm-12 col-xs-12">
             <div
               className="PostPreview panel panel-default"
               id={undefined}>
@@ -101,7 +106,7 @@ exports[`test PostContainer should be rendered 1`] = `
             </div>
           </div>
           <div
-            className="col-md-4 col-sm-12 col-xs-12">
+            className="no-padding col-md-4 col-sm-12 col-xs-12">
             <div
               className="PostPreview panel panel-default"
               id={undefined}>
@@ -134,7 +139,8 @@ exports[`test PostContainer should be rendered 1`] = `
               id={undefined}
               onChange={[Function]}
               placeholder="Let us know what you think"
-              type={undefined} />
+              type={undefined}
+              value="" />
             <button
               className="btn btn-sm btn-primary"
               disabled={false}

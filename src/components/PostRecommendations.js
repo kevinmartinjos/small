@@ -2,6 +2,7 @@ import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import PostPreview from './PostPreview';
 import FakeServer from '../FakeServer/FakeServer';
+import '../styles/PostRecommendations.css';
 
 var PropTypes = React.PropTypes;
 
@@ -48,11 +49,12 @@ var PostRecommendations = React.createClass({
 	},
 	render() {
 		return(
-			<Row>
+			<Row className='PostRecommendations'>
 				<Col xs={12}>
+					<h2 className='recommendations-title'>More</h2>
 					{this.state.recommendations.map(function(post){
 						return(
-						<Col key={post.id} xs={12} sm={12} md={4}>
+						<Col key={post.id} xs={12} sm={12} md={4} className='no-padding'>
 							<PostPreview id={post.id} title={post.title} previewText={post.preview} />
 						</Col>
 						)

@@ -1,10 +1,14 @@
 exports[`test PostRecommendations should be rendered 1`] = `
 <div
-  className="row">
+  className="PostRecommendations row">
   <div
     className="col-xs-12">
+    <h2
+      className="recommendations-title">
+      More
+    </h2>
     <div
-      className="col-md-4 col-sm-12 col-xs-12">
+      className="no-padding col-md-4 col-sm-12 col-xs-12">
       <div
         className="PostPreview panel panel-default"
         id={undefined}>

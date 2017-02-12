@@ -6,7 +6,7 @@
 }
 
 .PostContentContainer .blink{
-	animation: blinker 1s linear 1;
+	animation: blinker 1s linear 2;
 }
 
 @keyframes blinker {  

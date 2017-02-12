@@ -41,6 +41,15 @@ var CommentContainer = React.createClass({
 			this.classList.remove("blink");
 		});
 	},
+
+	/*There must be a better way of checking for prop changes and re-rendering*/
+	componentWillUpdate(nextProps){
+		if(this.props.postId != nextProps.postId){
+			this.setState({
+				comments: this.getPostComments(nextProps.postId)
+			})
+		}
+	},
 	render() {
 		var self = this;
 		return(

@@ -8,7 +8,8 @@ exports[`test CommentInput should be rendered 1`] = `
       id={undefined}
       onChange={[Function]}
       placeholder="Let us know what you think"
-      type={undefined} />
+      type={undefined}
+      value="" />
     <button
       className="btn btn-sm btn-primary"
       disabled={false}
