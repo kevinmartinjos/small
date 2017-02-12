@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import FakeServer from '../FakeServer/FakeServer';
 import CommentInput from './CommentInput';
 import Comment from './Comment';

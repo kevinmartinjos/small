@@ -1,21 +1,59 @@
 import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import PostPreview from './PostPreview';
+import FakeServer from '../FakeServer/FakeServer';
 
 var PropTypes = React.PropTypes;
 
 var PostRecommendations = React.createClass({
 	propTypes: {
-		posts: PropTypes.array.isRequired,
+		recommendations: PropTypes.array.isRequired,
+	},
+	getInitialState(){
+		var server = new FakeServer();
+		var recommendations = this.props.recommendations.map(function(id){
+			return server.getPost(id);
+		});
+		return {
+			recommendations: recommendations
+		};
+	},
+
+	/*
+		Same story as in PostContainer.js. Props changed, but not state. Forcing re-render.
+	*/
+	componentWillUpdate(nextProps){
+		var a = this.props.recommendations;
+		var b = nextProps.recommendations;
+		if(a.length !== b.length){
+			this.setState({
+				recommendations: nextProps.recommendations
+			});
+		}
+		else{
+			var server = new FakeServer();
+			var getPost = function(id){
+				return server.getPost(id);
+			};
+
+			for(var i=0; i<a.length; i++){
+				if(a[i] !== b[i]){
+					this.setState({
+						recommendations: nextProps.recommendations.map(getPost)
+					});
+					return;
+				}
+			}
+		}
 	},
 	render() {
 		return(
 			<Row>
 				<Col xs={12}>
-					{this.props.posts.map(function(post){
+					{this.state.recommendations.map(function(post){
 						return(
-						<Col xs={12} sm={12} md={4}>
-							<PostPreview key={post.id} id={post.id} title={post.title} previewText={post.preview} />
+						<Col key={post.id} xs={12} sm={12} md={4}>
+							<PostPreview id={post.id} title={post.title} previewText={post.preview} />
 						</Col>
 						)
 					})}

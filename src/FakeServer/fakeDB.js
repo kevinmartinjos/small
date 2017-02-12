@@ -14,7 +14,7 @@ If your entire soul screams ‘dangerous!’ right now, that’s understandable.
 						<h3>74 thousand tests per commit</h3>
 						<p id="1486891500074">AngularDart defines 1601 tests (here). But when you’re committing a change to AngularDart code in the Google repository, it also runs tests for everyone at Google who depends on the framework. At the moment, that’s about 74 thousand tests (depending on how big your change is — a heuristic skips tests that the system knows you’re not affecting).</p>
 						`,
-			recommendations: [2 ,3, 4]
+			recommendations: [2, 3, 4]
 		},
 		2: {
 			id: 2,
@@ -27,7 +27,7 @@ If your entire soul screams ‘dangerous!’ right now, that’s understandable.
 							<li>The Right Way to Test React Components </li>
 						</ol>
 						<p>Note: The bit.ly in the original medium.com article was not working. So did not bother to include links</p>`,
-			recommendations: [2 , 1, 4]
+			recommendations: [3 ,1 , 4]
 
 		},
 		3: {
@@ -47,7 +47,7 @@ If your entire soul screams ‘dangerous!’ right now, that’s understandable.
 					<p><i>-Yeah, but first you need to add React and React DOM as a library in your webpage.</i></p>
 					<p><i>This one's funny, so <a href='https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f#.t2lajnoa6'>click here</a> to read the whole thing - kevin.</i></p>
 						`,
-			recommendations: [2 ,3, 1]
+			recommendations: [2, 4, 1]
 		},
 		4: {
 			id: 4,
@@ -59,7 +59,7 @@ If your entire soul screams ‘dangerous!’ right now, that’s understandable.
 I was in the living room wearing my snowsuit, wrapped in my space blanket when he announced his impending trip. </p><p>I immediately waddled over, removed my ski mask, kissed him on the cheek and whispered in his ear, <p>“TAKE ME WITH YOU OR I SWEAR TO GOD, I’LL BURY ALL YOUR UNDERPANTS IN THE SNOW.”</p>
 He seemed unmoved, so I tried again. “Okay, then I’ll make you re-read my blog posts! ALL OF THEM!”</p>
 					`,
-			recommendations: [2 ,3, 1]
+			recommendations: [2, 3, 1]
 		}
 	}
 };

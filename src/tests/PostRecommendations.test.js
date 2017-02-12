@@ -5,15 +5,8 @@ import PostRecommendations from '../components/PostRecommendations';
 import ReactTestUtils from 'react-addons-test-utils';
 
 test('PostRecommendations should be rendered', () => {
-	var posts = [{
-		id: '1',
-		title: 'foo',
-		content: 'bar',
-		recommendations: [1]
-	}];
-
 	const component = renderer.create(
-		<PostRecommendations posts={posts} />
+		<PostRecommendations recommendations={[1]} />
 	);
 	let tree = component.toJSON();
   	expect(tree).toMatchSnapshot();

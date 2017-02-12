@@ -9,7 +9,6 @@ var routes = (
 		<Route path='/' component={App}>
 			<IndexRoute component={Main} />
 			<Route path="/posts/:id" component={PostContainer}>
-				<Route path="/id" component={PostContainer} />
 			</Route>
 		</Route>
 	</Router>

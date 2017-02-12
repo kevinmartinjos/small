@@ -37,7 +37,7 @@ Object.defineProperty(window, 'getSelection', { value: getSelection });
 test('PostContainer should be rendered', () => {
 	var mockParam = {id: '1'};
 	const component = renderer.create(
-		<PostContainer routeParams={mockParam}/>
+		<PostContainer params={mockParam}/>
 	);
 	let tree = component.toJSON();
   	expect(tree).toMatchSnapshot();
@@ -45,7 +45,7 @@ test('PostContainer should be rendered', () => {
 
 test('Comments should be rendered', () => {
 	var mockParam = {id: '1'};
-	let component = ReactTestUtils.renderIntoDocument(<PostContainer routeParams={mockParam}/>);
+	let component = ReactTestUtils.renderIntoDocument(<PostContainer params={mockParam}/>);
   	let node = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'CommentContainer');
 });
 
@@ -56,7 +56,7 @@ test('Should return user selected text', () => {
 		clientX: 10
 	};
 
-	let component = ReactTestUtils.renderIntoDocument(<PostContainer routeParams={mockParam}/>);
+	let component = ReactTestUtils.renderIntoDocument(<PostContainer params={mockParam}/>);
 	component.postContainer = {
 		getClientRects: function(){
 			return[{
@@ -79,7 +79,7 @@ test('should show inline commentbox prompt on selection', () => {
 		clientY: 10
 	};
 
-	let component = ReactTestUtils.renderIntoDocument(<PostContainer routeParams={mockParam}/>);
+	let component = ReactTestUtils.renderIntoDocument(<PostContainer params={mockParam}/>);
 	component.postContainer = {
 		getClientRects: function(){
 			return[{
@@ -101,7 +101,7 @@ test('should hide commentbox prompt on cancel', () => {
 		clientY: 10
 	};
 
-	let component = ReactTestUtils.renderIntoDocument(<PostContainer routeParams={mockParam}/>);
+	let component = ReactTestUtils.renderIntoDocument(<PostContainer params={mockParam}/>);
 	component.postContainer = {
 		getClientRects: function(){
 			return[{

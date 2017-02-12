@@ -15,35 +15,24 @@ var PostContainer = React.createClass({
 		postContainerTop: 0
 	},
 	getInitialState(){
-		console.log("render");
+		var id = this.props.params.id;
+		var post = this.getPost(id);
 		return {
-			title: '',
-			content: '',
-			selectedText: '',
-			showInlineComment: false,
-			inlineCommentProps: {
-				x: undefined
-			}
+			id: id,
+			title: post.title,
+			content: post.content,
+			recommendations: post.recommendations
 		};
 	},
 	getChildContext() {
 		return {
-			postId: this.props.routeParams.id,
+			postId: this.props.params.id,
 			selectedText: this.state.selectedText
 		};
 	},
 	childContextTypes: {
 		postId: PropTypes.string,
 		selectedText: PropTypes.string
-	},
-	componentWillMount(){
-		var id = this.props.routeParams.id;
-		var post = this.getPost(id);
-		this.setState({
-			title: post.title,
-			content: post.content,
-			recommendations: post.recommendations
-		});
 	},
 	getPost(id){
 		var server = new FakeServer();
@@ -113,14 +102,20 @@ var PostContainer = React.createClass({
 	storePostContainer(ref){
 		this.postContainer = ref;
 	},
-	handleClick(event){
-		console.log('click: ' + event.target.clientX);
+	storePostRecommendations(ref){
+		this.postRecommendations = ref;
 	},
-	getRecommendations(){
-		var self = this;
-		return this.state.recommendations.map(function(id){
-			return self.getPost(id);
-		});
+	componentWillUpdate(nextProps, nextState){
+		if(this.props.params.id !== nextProps.params.id){
+			var post = this.getPost(nextProps.params.id);
+			this.setState({
+				id: nextProps.params.id,
+				title: post.title,
+				content: post.content,
+				recommendations: post.recommendations
+			});
+			// this.postRecommendations.forceUpdate();
+		}
 	},
 	render() {
 		return(
@@ -128,7 +123,7 @@ var PostContainer = React.createClass({
 				<Col xs={0} sm={1} md={3}/>
 				<Col xs={12} sm={10} md={6}>
 					<div className='PostContainer' ref={this.storePostContainer}>
-						<Post title={this.state.title} content={this.state.content}
+						<Post id={this.state.id} title={this.state.title} content={this.state.content}
 							handleSelection={this.getSelection}
 							onClick={this.handleClick}
 						/>
@@ -141,11 +136,11 @@ var PostContainer = React.createClass({
 								ref={this.storeInlineCommentPrompt}
 							/>
 						}
-						<PostRecommendations posts={this.getRecommendations()} />
-						<CommentContainer ref={this.storeCommentComponent} postId={this.props.routeParams.id.toString()} />
-						<Col xs={0} sm={1} md={3} />
+						<PostRecommendations ref={this.storePostRecommendations} recommendations={this.state.recommendations} />
+						<CommentContainer ref={this.storeCommentComponent} postId={this.props.params.id.toString()} />
 					</div>
 				</Col>
+				<Col xs={0} sm={1} md={3} />
 			</Row>
 		);
 	}
