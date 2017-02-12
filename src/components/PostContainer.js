@@ -9,6 +9,10 @@ import {Row, Col} from 'react-bootstrap';
 var PropTypes = React.PropTypes;
 
 var PostContainer = React.createClass({
+	defaultProps: {
+		postContainerLeft: 0,
+		postContainerTop: 0
+	},
 	getInitialState(){
 		return {
 			title: '',
@@ -54,13 +58,16 @@ var PostContainer = React.createClass({
 			//TODO: Be mroe defensive here. What if there is more than 1 range?
 			//getClientRects is the de facto way to get position of a DOM node
 			var rect = selection.getRangeAt(0).getClientRects()[0];
+			var containerRect = this.postContainer.getClientRects()[0];
+			// console.log(selection.getRangeAt(0));
+
 			this.setState({
 				selectedText: selectedText,
 				//show the small hovering comment button
 				showInlineComment: true,
 				inlineCommentProps: {
-					x: rect.right,
-					y: rect.top,
+					x: rect.right - containerRect.left + 25, //+25 is for making sure the floating button does not cover text to be commented
+					y: rect.top - containerRect.top,
 				}
 			});
 		}
@@ -96,14 +103,21 @@ var PostContainer = React.createClass({
 	storeInlineCommentPrompt(ref){
 		this.inlineCommentPrompt = ref;
 	},
+	storePostContainer(ref){
+		this.postContainer = ref;
+	},
+	handleClick(event){
+		console.log('click: ' + event.target.clientX);
+	},
 	render() {
 		return(
 			<Row>
 				<Col xs={0} sm={1} md={3}/>
 				<Col xs={12} sm={10} md={6}>
-					<div className='PostContainer'>
+					<div className='PostContainer' ref={this.storePostContainer}>
 						<Post title={this.state.title} content={this.state.content}
 							handleSelection={this.getSelection}
+							onClick={this.handleClick}
 						/>
 						{this.state.showInlineComment &&
 							<InlineCommentPrompt x={this.state.inlineCommentProps.x}

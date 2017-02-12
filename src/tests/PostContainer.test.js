@@ -52,6 +52,16 @@ test('Should return user selected text', () => {
 	};
 
 	let component = ReactTestUtils.renderIntoDocument(<PostContainer routeParams={mockParam}/>);
+	component.postContainer = {
+		getClientRects: function(){
+			return[{
+				right: 0,
+				top: 0,
+				left: 0
+			}]
+		}
+	};
+
 	component.getSelection(event);
   	expect(component.state.selectedText).toEqual("user selected text");
 });
@@ -65,6 +75,15 @@ test('should show inline commentbox prompt on selection', () => {
 	};
 
 	let component = ReactTestUtils.renderIntoDocument(<PostContainer routeParams={mockParam}/>);
+	component.postContainer = {
+		getClientRects: function(){
+			return[{
+				right: 0,
+				top: 0,
+				left: 0
+			}]
+		}
+	};
 	component.getSelection(event);
 	let node = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'InlineCommentPrompt');
 });
@@ -78,6 +97,15 @@ test('should hide commentbox prompt on cancel', () => {
 	};
 
 	let component = ReactTestUtils.renderIntoDocument(<PostContainer routeParams={mockParam}/>);
+	component.postContainer = {
+		getClientRects: function(){
+			return[{
+				right: 0,
+				top: 0,
+				left: 0
+			}]
+		}
+	};
 	component.getSelection(event);
 	component.inlineCommentPrompt.handlePromptClick();
 	component.inlineCommentPrompt.commentInputContainer.handleCancel();

@@ -1,6 +1,7 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
+import {Button, Panel, FormControl} from 'react-bootstrap';
 import FakeServer from '../FakeServer/FakeServer';
+import '../styles/InlineCommentInputContainer.css';
 
 var PropTypes = React.PropTypes;
 
@@ -39,18 +40,20 @@ var InlineCommentInputContainer = React.createClass({
 	},
 	render() {
 		return(
-			<div className="InlineCommentInputContainer">
-				<div>
-					{this.context.selectedText}
-				</div>
+			<Panel className="InlineCommentInputContainer">
+				<Panel className="annotation">
+					<span>{this.context.selectedText}</span>
+				</Panel>
 				<form onSubmit={this.submitHandler}>
-					<div>
-						<textarea onChange={this.handleChange}/>
-					</div>
-					<Button bsSize='sm' type='submit'>Submit</Button>
-					<Button bsSize='sm' onClick={this.handleCancel}>cancel</Button>
+					<FormControl
+						componentClass="textarea"
+						onChange={this.handleChange}
+						placeholder="Let us know what you think"
+					/>
+					<Button bsSize='sm' bsStyle='success' type='submit'>Submit</Button>
+					<Button bsSize='sm' bsStyle='danger' onClick={this.handleCancel}>cancel</Button>
 				</form>
-			</div>
+			</Panel>
 		);
 	}
 });

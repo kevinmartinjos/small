@@ -9,11 +9,12 @@ exports[`test InlineCommentPrompt should be rendered 1`] = `
     }
   }>
   <button
-    className="btn btn-sm btn-default"
+    className="makeComment btn btn-lg btn-default"
     disabled={false}
-    onClick={[Function]}
     type="button">
-    c
+    <span
+      className="glyphicon glyphicon-pencil"
+      onClick={[Function]} />
   </button>
 </div>
 `;

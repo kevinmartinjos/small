@@ -1,6 +1,7 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
+import {Button, Glyphicon} from 'react-bootstrap';
 import InlineCommentInputContainer from './InlineCommentInputContainer';
+import '../styles/InlineCommentPrompt.css';
 
 var PropTypes = React.PropTypes;
 
@@ -43,7 +44,9 @@ var InlineCommentPrompt = React.createClass({
 		return(
 			<div className="InlineCommentPrompt" ref="child" style={this.state.style}>
 				{this.state.prompt ?
-					(<Button bsSize='sm' onClick={this.handlePromptClick}>c</Button>)
+					(<Button className='makeComment' bsSize='lg' >
+						<Glyphicon glyph="pencil" onClick={this.handlePromptClick}/>
+					</Button>)
 					:
 					(<InlineCommentInputContainer 
 						submitHandlerCallback={this.props.submitHandlerCallback}

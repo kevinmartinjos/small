@@ -1,26 +1,39 @@
 exports[`test InlineCommentInputContainer should be rendered 1`] = `
 <div
-  className="InlineCommentInputContainer">
-  <div />
-  <form
-    onSubmit={[Function]}>
-    <div>
-      <textarea
-        onChange={[Function]} />
+  className="InlineCommentInputContainer panel panel-default"
+  id={undefined}>
+  <div
+    className="panel-body">
+    <div
+      className="annotation panel panel-default"
+      id={undefined}>
+      <div
+        className="panel-body">
+        <span />
+      </div>
     </div>
-    <button
-      className="btn btn-sm btn-default"
-      disabled={false}
-      type="submit">
-      Submit
-    </button>
-    <button
-      className="btn btn-sm btn-default"
-      disabled={false}
-      onClick={[Function]}
-      type="button">
-      cancel
-    </button>
-  </form>
+    <form
+      onSubmit={[Function]}>
+      <textarea
+        className="form-control"
+        id={undefined}
+        onChange={[Function]}
+        placeholder="Let us know what you think"
+        type={undefined} />
+      <button
+        className="btn btn-sm btn-success"
+        disabled={false}
+        type="submit">
+        Submit
+      </button>
+      <button
+        className="btn btn-sm btn-danger"
+        disabled={false}
+        onClick={[Function]}
+        type="button">
+        cancel
+      </button>
+    </form>
+  </div>
 </div>
 `;
