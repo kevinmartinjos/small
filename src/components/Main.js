@@ -12,7 +12,8 @@ var Main = React.createClass({
 	render() {
 		return(
 			<Row>
-				<Col xs={12}>
+				<Col xs={0} sm={1} md={3} />
+				<Col xs={12} sm={10} md={6}>
 					<div className="Main">
 						<PostPreviewContainer>
 							{this.getHomePage().map(function(post){
@@ -21,6 +22,7 @@ var Main = React.createClass({
 						</PostPreviewContainer>
 					</div>
 				</Col>
+				<Col xs={0} sm={1} md={3} />
 			</Row>
 		);
 	}

@@ -1,6 +1,7 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
+import {Button, FormControl} from 'react-bootstrap';
 import FakeServer from '../FakeServer/FakeServer';
+import '../styles/CommentInput.css';
 
 var PropTypes = React.PropTypes;
 
@@ -33,11 +34,11 @@ var CommentInput = React.createClass({
 		return(
 			<div className="CommentInput">
 				<form onSubmit={this.handleSubmit}>
-					<div>
-					<textarea value={this.state.value}
+					<FormControl
+						componentClass="textarea"
 						onChange={this.handleChange}
+						placeholder="Let us know what you think"
 					/>
-					</div>
 					<Button bsSize='sm' type='submit' bsStyle='primary'>Submit</Button>
 				</form>
 			</div>

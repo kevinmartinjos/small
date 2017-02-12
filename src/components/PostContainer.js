@@ -99,7 +99,8 @@ var PostContainer = React.createClass({
 	render() {
 		return(
 			<Row>
-				<Col xs={12}>
+				<Col xs={0} sm={1} md={3}/>
+				<Col xs={12} sm={10} md={6}>
 					<div className='PostContainer'>
 						<Post title={this.state.title} content={this.state.content}
 							handleSelection={this.getSelection}
@@ -114,6 +115,7 @@ var PostContainer = React.createClass({
 						}
 
 						<CommentContainer ref={this.storeCommentComponent} postId={this.props.routeParams.id.toString()} />
+						<Col xs={0} sm={1} md={3} />
 					</div>
 				</Col>
 			</Row>

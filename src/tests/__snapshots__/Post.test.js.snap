@@ -1,7 +1,8 @@
 exports[`test Post should be rendered 1`] = `
 <div
   className="Post">
-  <h2>
+  <h2
+    className="title">
     Test
   </h2>
   <div

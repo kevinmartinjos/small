@@ -1,16 +1,20 @@
 exports[`test PostPreview should be rendered 1`] = `
 <div
-  className="PostPreview">
-  <h3>
-    <a
-      className="title"
-      onClick={[Function]}
-      style={Object {}}>
-      foo
-    </a>
-  </h3>
-  <section>
-    this is not bar
-  </section>
+  className="PostPreview panel panel-default"
+  id={undefined}>
+  <div
+    className="panel-body">
+    <h3>
+      <a
+        className="title"
+        onClick={[Function]}
+        style={Object {}}>
+        foo
+      </a>
+    </h3>
+    <section>
+      this is not bar
+    </section>
+  </div>
 </div>
 `;

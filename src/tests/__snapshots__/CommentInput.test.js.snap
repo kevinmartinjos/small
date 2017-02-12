@@ -3,11 +3,12 @@ exports[`test CommentInput should be rendered 1`] = `
   className="CommentInput">
   <form
     onSubmit={[Function]}>
-    <div>
-      <textarea
-        onChange={[Function]}
-        value="" />
-    </div>
+    <textarea
+      className="form-control"
+      id={undefined}
+      onChange={[Function]}
+      placeholder="Let us know what you think"
+      type={undefined} />
     <button
       className="btn btn-sm btn-primary"
       disabled={false}

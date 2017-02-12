@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import '../styles/PostContentContainer.css';
 
 var PropTypes = React.PropTypes;
 

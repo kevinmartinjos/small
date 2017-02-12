@@ -1,6 +1,13 @@
 exports[`test Comment should be rendered 1`] = `
 <div
-  className="Comment">
-  I am a comment
+  className="Comment panel panel-default"
+  id={undefined}>
+  <div
+    className="panel-body">
+    <section
+      className="content">
+      I am a comment
+    </section>
+  </div>
 </div>
 `;

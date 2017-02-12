@@ -1,13 +1,25 @@
 .PostPreview{
 	text-align: left;
-	padding-left: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .PostPreview .title{
 	color: rgba(0, 0, 0, 0.8);
 	cursor: pointer;
+	letter-spacing: -0.02em;
+	font-weight: 700;
+	font-family: 'medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif'
 }
 
 .PostPreview .title:hover{
 	text-decoration: none;
+}
+
+.PostPreview section{
+	font-size: 16px;
+	line-height: 1.3;
+	letter-spacing: -.02em;
+	font-weight: 300;
+	font-family: 'medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif';
 }

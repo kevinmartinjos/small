@@ -1,4 +1,16 @@
 .PostContainer{
 	text-align: left;
 	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.PostContainer .title, .PostContainer h3{
+	font-family: 'medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif'
+}
+
+.PostContainer .title{
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 1.04em;
+	letter-spacing: -0.028em;
 }

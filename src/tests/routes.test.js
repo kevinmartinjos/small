@@ -11,9 +11,6 @@ import Main from '../components/Main';
 const history = createMemoryHistory("/posts/1");
 
 test('should load a post', () => {
-	// let post = ReactTestUtils.renderIntoDocument(<PostContainer />);
-	// let title = ReactDOM.findRenderedDOMComponentWithTag(post, 'h3');
-	// expect(ReactDOM.findDOMNode(title).textContent).toBe('Test post');
 	let component = ReactTestUtils.renderIntoDocument(<Router history={history}>
 		<Route path='/' component = {App}>
 			<IndexRoute component={Main} />
@@ -21,7 +18,6 @@ test('should load a post', () => {
 		</Route>
 	</Router>);
 	let node = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'Post');
-	// expect(node.textContent).toBe('Test post');
 });
 
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import {Panel} from 'react-bootstrap';
+import '../styles/Comment.css';
 
 var PropTypes = React.PropTypes;
 
@@ -10,13 +12,15 @@ var Comment = React.createClass({
 	},
 	render() {
 		return(
-			<div className="Comment">
+			<Panel className="Comment">
 				{this.props.annotation &&
-					<div>{this.props.annotation}</div>
+					<Panel className="annotation"><span>{this.props.annotation}</span></Panel>
 				}
-				{ReactHtmlParser(this.props.content)}
+				<section className='content'>
+					{ReactHtmlParser(this.props.content)}
+				</section>
 				
-			</div>
+			</Panel>
 		);
 	}
 });

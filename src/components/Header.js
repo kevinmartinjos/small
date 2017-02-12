@@ -7,9 +7,12 @@ var Header = React.createClass({
     return(
 		<div className='Header'>
 			<Row>
-				<Col xs={2}>
-					<img className='logo' src={'/small_logo_tiny.png'} alt='logo'/>
+				<Col xs={0} sm={1} md={3} />
+				<Col xs={2} sm={2} md={3}>
+					<img className='logo' src={'/small_logo_big'} alt='logo'/>
 				</Col>
+				<Col xs={0} sm={0} md={3} />
+				<Col xs={0} sm={1} md={3} />
 			</Row>
 		{this.props.children}
 		</div>

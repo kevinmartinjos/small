@@ -8,7 +8,8 @@ var TopicNav = React.createClass({
     return(
 		<div className="TopicNav">
 			<Row>
-				<Col xs={12}>
+				<Col xs={0} sm={1} md={3} />
+				<Col xs={12} sm={10} md={6}>
 					<div className='TopicContainer'>
 						<Link className='topic' to='/'>Home</Link>
 						<Link className='topic' to='/editors'>Editor's pick</Link>
@@ -16,6 +17,7 @@ var TopicNav = React.createClass({
 						<Link className='topic' to='/technology'>technology</Link>
 					</div>
 				</Col>
+				<Col xs={0} sm={1} md={3} />
 			</Row>
 		</div>
     );
