@@ -3,6 +3,7 @@ import FakeServer from '../FakeServer/FakeServer';
 import Post from './Post';
 import CommentContainer from './CommentContainer';
 import InlineCommentPrompt from './InlineCommentPrompt';
+import PostRecommendations from './PostRecommendations';
 import '../styles/PostContainer.css';
 import {Row, Col} from 'react-bootstrap';
 
@@ -14,6 +15,7 @@ var PostContainer = React.createClass({
 		postContainerTop: 0
 	},
 	getInitialState(){
+		console.log("render");
 		return {
 			title: '',
 			content: '',
@@ -39,7 +41,8 @@ var PostContainer = React.createClass({
 		var post = this.getPost(id);
 		this.setState({
 			title: post.title,
-			content: post.content
+			content: post.content,
+			recommendations: post.recommendations
 		});
 	},
 	getPost(id){
@@ -113,6 +116,12 @@ var PostContainer = React.createClass({
 	handleClick(event){
 		console.log('click: ' + event.target.clientX);
 	},
+	getRecommendations(){
+		var self = this;
+		return this.state.recommendations.map(function(id){
+			return self.getPost(id);
+		});
+	},
 	render() {
 		return(
 			<Row>
@@ -132,7 +141,7 @@ var PostContainer = React.createClass({
 								ref={this.storeInlineCommentPrompt}
 							/>
 						}
-
+						<PostRecommendations posts={this.getRecommendations()} />
 						<CommentContainer ref={this.storeCommentComponent} postId={this.props.routeParams.id.toString()} />
 						<Col xs={0} sm={1} md={3} />
 					</div>

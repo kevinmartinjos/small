@@ -18,7 +18,8 @@ exports[`test PostContainer should be rendered 1`] = `
           <div
             className="PostContentContainer">
             <section>
-              <p>
+              <p
+                id="1486891456380">
                 It’s 
                 <a
                   href="http://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext">
@@ -26,23 +27,27 @@ exports[`test PostContainer should be rendered 1`] = `
                 </a>
                  that Google uses a single repository to share code — all 2 billion lines of it — and that it uses the trunk-based development paradigm.
               </p>
-              <p>
+              <p
+                id="1486891472468">
                 For many developers outside the company, this is surprising and counterintuitive, but it works really well. (The article linked above gives good examples, so I won’t repeat them here.)
               </p>
               <h3>
                 Only one version
               </h3>
-              <p>
+              <p
+                id="1486891481214">
                 When you employ trunk-based development in a single huge repo, you have only one version of everything. That’s kind of obvious. It’s still good to point it out here, though, because it means that — at Google — you can’t have app FooBar that’s using AngularDart 2.2.1 and another app BarFoo that’s on 2.3.0. Both apps must be on the same version — the latest one.
               </p>
-              <p>
+              <p
+                id="1486891489647">
                 That’s why Googlers sometimes say that all software at Google lives on the bleeding edge.
                 If your entire soul screams ‘dangerous!’ right now, that’s understandable. Depending on the trunk (‘master’ in git terminology) of a library with your production code sure sounds dangerous. But there’s a plot twist ahead.
               </p>
               <h3>
                 74 thousand tests per commit
               </h3>
-              <p>
+              <p
+                id="1486891500074">
                 AngularDart defines 1601 tests (here). But when you’re committing a change to AngularDart code in the Google repository, it also runs tests for everyone at Google who depends on the framework. At the moment, that’s about 74 thousand tests (depending on how big your change is — a heuristic skips tests that the system knows you’re not affecting).
               </p>
             </section>

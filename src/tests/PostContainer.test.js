@@ -11,6 +11,11 @@ function Selection(){
 		},
 		getRangeAt: function(){
 			return {
+				startContainer: {
+					parentElement: {
+						id: '1234'
+					}
+				},
 				getClientRects: function(){
 					return[{
 						right: 0,
