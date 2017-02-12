@@ -4,7 +4,7 @@
 	margin-right: 20px;
 }
 
-.PostPreview .title{
+.title{
 	color: rgba(0, 0, 0, 0.8);
 	cursor: pointer;
 	letter-spacing: -0.02em;
@@ -12,7 +12,7 @@
 	font-family: 'medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif'
 }
 
-.PostPreview .title:hover{
+.title:hover{
 	text-decoration: none;
 }
 

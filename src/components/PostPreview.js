@@ -14,10 +14,12 @@ var PostPreview = React.createClass({
 
 	render() {
 		return(
-			<Panel className="PostPreview">
-				<h3><Link className='title' to={'/posts/' + this.props.id}>{this.props.title}</Link></h3>
-				<section>{this.props.previewText}</section>
-			</Panel>
+			<Link className='title' to={'/posts/' + this.props.id}>
+				<Panel className="PostPreview">
+					<h3>{this.props.title}</h3>
+					<section>{this.props.previewText}</section>
+				</Panel>
+			</Link>
 		);
 	}
 });

@@ -35,7 +35,10 @@ var CommentContainer = React.createClass({
 	handleAnnotationClick(id){
 		var domElement = document.getElementById(id);
 		var rect = domElement.getClientRects()[0];
-		window.scroll(rect.left, rect.top);
+
+		//This will mess up the react-router hash history and throw a warning in the console
+		//But its easier than manually scrolling to the right element. :D
+		location.href='#'+id;
 		domElement.className += " blink";
 		domElement.addEventListener('animationend', function(){
 			this.classList.remove("blink");

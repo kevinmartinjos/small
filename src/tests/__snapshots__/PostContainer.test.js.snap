@@ -65,66 +65,66 @@ exports[`test PostContainer should be rendered 1`] = `
           </h2>
           <div
             className="no-padding col-md-4 col-sm-12 col-xs-12">
-            <div
-              className="PostPreview panel panel-default"
-              id={undefined}>
+            <a
+              className="title"
+              onClick={[Function]}
+              style={Object {}}>
               <div
-                className="panel-body">
-                <h3>
-                  <a
-                    className="title"
-                    onClick={[Function]}
-                    style={Object {}}>
+                className="PostPreview panel panel-default"
+                id={undefined}>
+                <div
+                  className="panel-body">
+                  <h3>
                     How Blockchain works, and how it powers Bitcoin
-                  </a>
-                </h3>
-                <section>
-                  “Schrödinger’s Backup: the condition of any backup is unknown until a restore is attempted.” — Nixcraft
-                </section>
+                  </h3>
+                  <section>
+                    “Schrödinger’s Backup: the condition of any backup is unknown until a restore is attempted.” — Nixcraft
+                  </section>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div
             className="no-padding col-md-4 col-sm-12 col-xs-12">
-            <div
-              className="PostPreview panel panel-default"
-              id={undefined}>
+            <a
+              className="title"
+              onClick={[Function]}
+              style={Object {}}>
               <div
-                className="panel-body">
-                <h3>
-                  <a
-                    className="title"
-                    onClick={[Function]}
-                    style={Object {}}>
+                className="PostPreview panel panel-default"
+                id={undefined}>
+                <div
+                  className="panel-body">
+                  <h3>
                     How it feels to learn JavaScript in 2016
-                  </a>
-                </h3>
-                <section>
-                  No JavaScript frameworks were created during the writing of this article
-                </section>
+                  </h3>
+                  <section>
+                    No JavaScript frameworks were created during the writing of this article
+                  </section>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div
             className="no-padding col-md-4 col-sm-12 col-xs-12">
-            <div
-              className="PostPreview panel panel-default"
-              id={undefined}>
+            <a
+              className="title"
+              onClick={[Function]}
+              style={Object {}}>
               <div
-                className="panel-body">
-                <h3>
-                  <a
-                    className="title"
-                    onClick={[Function]}
-                    style={Object {}}>
+                className="PostPreview panel panel-default"
+                id={undefined}>
+                <div
+                  className="panel-body">
+                  <h3>
                     To Live & (Nearly) Die In Orange County
-                  </a>
-                </h3>
-                <section>
-                  Vacationing in the Land of Sun, Silicone & Subliminal Messages
-                </section>
+                  </h3>
+                  <section>
+                    Vacationing in the Land of Sun, Silicone & Subliminal Messages
+                  </section>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
