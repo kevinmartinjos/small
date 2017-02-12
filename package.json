@@ -1,5 +1,6 @@
 {
   "name": "small",
+  "homepage": "http://lonesword.in/small/",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
