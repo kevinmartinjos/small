@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import Comment from '../components/Comment';
 import ReactTestUtils from 'react-addons-test-utils';
@@ -9,7 +8,7 @@ test('Comment should be rendered', () => {
 		<Comment content="I am a comment" />
 	);
 	let tree = component.toJSON();
-  	expect(tree).toMatchSnapshot();
+	expect(tree).toMatchSnapshot();
 });
 
 test('Comment should render html', () => {

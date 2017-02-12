@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import Post from '../components/Post';
 import ReactTestUtils from 'react-addons-test-utils';
@@ -9,7 +8,7 @@ test('Post should be rendered', () => {
 		<Post title="Test" content="I am post" />
 	);
 	let tree = component.toJSON();
-  	expect(tree).toMatchSnapshot();
+	expect(tree).toMatchSnapshot();
 });
 
 test('Post should render html', () => {

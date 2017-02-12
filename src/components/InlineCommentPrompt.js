@@ -17,21 +17,11 @@ var InlineCommentPrompt = React.createClass({
 		return {
 			style:{
 				position: 'absolute',
-				left: 0,
-				top: 0,
-				color: 'lightGreen'
+				left: this.props.x,
+				top: this.props.y,
 			},
 			prompt: true
 		};
-	},
-	componentWillMount(){
-		this.setState({
-			style: {
-				position: 'absolute',
-				left: this.props.x,
-				top: this.props.y
-			}
-		});
 	},
 	handlePromptClick(){
 		this.setState({
@@ -49,12 +39,13 @@ var InlineCommentPrompt = React.createClass({
 						<Glyphicon glyph="pencil" onClick={this.handlePromptClick}/>
 					</Button>)
 					:
-					(<InlineCommentInputContainer
+					(
+						<InlineCommentInputContainer
 						domId={this.props.domId}
 						submitHandlerCallback={this.props.submitHandlerCallback}
 						cancelCallback={this.props.cancelCallback}
 						ref={this.storeCommentInputContainer}
-					/>)
+						/>)
 				}
 			</div>
 		);

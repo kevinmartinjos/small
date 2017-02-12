@@ -34,23 +34,21 @@ var CommentContainer = React.createClass({
 	},
 	handleAnnotationClick(id){
 		var domElement = document.getElementById(id);
-		var rect = domElement.getClientRects()[0];
-
 		//This will mess up the react-router hash history and throw a warning in the console
 		//But its easier than manually scrolling to the right element. :D
-		location.href='#'+id;
-		domElement.className += " blink";
+		location.href='#' + id;
+		domElement.className += ' blink';
 		domElement.addEventListener('animationend', function(){
-			this.classList.remove("blink");
+			this.classList.remove('blink');
 		});
 	},
 
 	/*There must be a better way of checking for prop changes and re-rendering*/
 	componentWillUpdate(nextProps){
-		if(this.props.postId != nextProps.postId){
+		if(this.props.postId !== nextProps.postId){
 			this.setState({
 				comments: this.getPostComments(nextProps.postId)
-			})
+			});
 		}
 	},
 	render() {
@@ -59,10 +57,11 @@ var CommentContainer = React.createClass({
 			<div className="CommentContainer">
 				<CommentInput postId={this.props.postId} submitCallback={this.refreshComments}/>
 				{this.state.comments.map(function(comment){
-					return <Comment key={comment.id} content={comment.content}
+					return (<Comment key={comment.id} content={comment.content}
 							annotation={comment.annotation}
 							domId={comment.domId}
-							handleAnnotationClick={self.handleAnnotationClick}/>;
+							handleAnnotationClick={self.handleAnnotationClick}
+							/>);
 				})}
 			</div>
 		);

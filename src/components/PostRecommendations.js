@@ -37,7 +37,7 @@ var PostRecommendations = React.createClass({
 				return server.getPost(id);
 			};
 
-			for(var i=0; i<a.length; i++){
+			for(var i = 0; i < a.length; i++){
 				if(a[i] !== b[i]){
 					this.setState({
 						recommendations: nextProps.recommendations.map(getPost)
@@ -57,7 +57,7 @@ var PostRecommendations = React.createClass({
 						<Col key={post.id} xs={12} sm={12} md={4} className='no-padding'>
 							<PostPreview id={post.id} title={post.title} previewText={post.preview} />
 						</Col>
-						)
+						);
 					})}
 				</Col>
 			</Row>

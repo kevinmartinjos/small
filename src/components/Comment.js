@@ -28,7 +28,6 @@ var Comment = React.createClass({
 				<section className='content'>
 					{ReactHtmlParser(this.props.content)}
 				</section>
-				
 			</Panel>
 		);
 	}

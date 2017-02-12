@@ -8,8 +8,7 @@ var routes = (
 	<Router history={hashHistory}>
 		<Route path='/' component={App}>
 			<IndexRoute component={Main} />
-			<Route path="/posts/:id" component={PostContainer}>
-			</Route>
+			<Route path="/posts/:id" component={PostContainer} />
 		</Route>
 	</Router>
 );

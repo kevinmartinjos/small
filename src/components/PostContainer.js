@@ -47,7 +47,7 @@ var PostContainer = React.createClass({
 		if(selectedText.length !== 0) {
 			//TODO: Be mroe defensive here. What if there is more than 1 range?
 			//getClientRects is the de facto way to get position of a DOM node
-			var range = selection.getRangeAt(0); 
+			var range = selection.getRangeAt(0);
 			var rect = range.getClientRects()[0];
 			var containerRect = this.postContainer.getClientRects()[0];
 			this.setState({
@@ -78,7 +78,7 @@ var PostContainer = React.createClass({
 			showInlineComment: false
 		});
 	},
-	
+
 	/*If the inline comment input box is canceled, we should not even
 	show the inlineCommentPrompt anymore - i.e the small hovering prompt
 	button too should disappear*/
@@ -109,7 +109,7 @@ var PostContainer = React.createClass({
 	/*
 		Ok this is a mess. React was supposed to do this FOR me.
 		Why?
-		There was a bug. 'Recommendations' that are displayed below a post have <Link> in them. 
+		There was a bug. 'Recommendations' that are displayed below a post have <Link> in them.
 
 		Expectation - user clicks on them, route changes, props to <PostContainer> changes, <PostContainer> re-renders.
 		Reality - route changed, the props to <PostContainer /> changed, but it did not re-render!
