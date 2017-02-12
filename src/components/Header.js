@@ -9,7 +9,7 @@ var Header = React.createClass({
 			<Row>
 				<Col xs={0} sm={1} md={3} />
 				<Col xs={2} sm={2} md={3}>
-					<img className='logo' src={'/small_logo_big'} alt='logo'/>
+					<img className='logo' src={'/small_logo_big2.png'} alt='logo'/>
 				</Col>
 				<Col xs={0} sm={0} md={3} />
 				<Col xs={0} sm={1} md={3} />
